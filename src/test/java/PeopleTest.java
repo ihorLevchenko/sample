@@ -7,7 +7,7 @@ public class PeopleTest {
     @Test
     public void test() {
         RestTemplate restTemplate = new RestTemplate();
-        Object peopleDescription = restTemplate.getForObject("https://api.hearthstonejson.com/v1/19776/enUS/cards.json", Object.class);
+        PeopleDescription peopleDescription = restTemplate.getForObject("https://swapi.co/api/people/1/", PeopleDescription.class);
         System.out.println(peopleDescription);
     }
 }
