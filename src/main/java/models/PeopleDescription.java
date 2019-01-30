@@ -2,7 +2,6 @@ package models;
 
 public class PeopleDescription {
 
-
     private String name;
     private Integer height;
     private Integer mass;
