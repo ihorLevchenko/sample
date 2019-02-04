@@ -6,6 +6,6 @@ public class Base {
 
     @BeforeClass
     public static void setup() {
-        logic = new Logic();
+         logic = new Logic();
     }
 }

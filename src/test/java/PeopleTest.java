@@ -7,9 +7,6 @@ import org.junit.Test;
 
 public class PeopleTest extends Base {
 
-
-
-
     @Test
     public void positiveTest() {
         RestAssured.given()
@@ -25,9 +22,9 @@ public class PeopleTest extends Base {
     public void negativeTest() {
         RestAssured.given()
                 .baseUri(logic.getSwapiUrl())
-                .basePath(logic.getSwapiUrl())
+                .basePath(logic.getSwapiPath())
                 .accept(ContentType.JSON)
                 .when().get()
-                .then().body("name", Matchers.equalTo("Shlyapa"));
+                .then().body("name", Matchers.equalTo("Luke Skywalker22"));
     }
 }
