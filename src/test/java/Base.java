@@ -2,10 +2,10 @@ import org.junit.BeforeClass;
 
 public class Base {
 
-    static Logic logic;
+    static PeopleTest logic;
 
     @BeforeClass
     public static void setup() {
-         logic = new Logic();
+        logic = new PeopleTest();
     }
 }
