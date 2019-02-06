@@ -31,9 +31,8 @@ public class PeopleTest extends Base {
     public void getPeopleLuk() {
         PeopleModel people = new PeopleCtrl().getNewPeople();
         Assert.assertEquals("Luke Skywalker", people.getName());
-        Assert.assertEquals("[https://swapi.co/api/films/2/, https://swapi.co/api/films/6/, https://swapi.co/api/films/3/, https://swapi.co/api/films/1/, https://swapi.co/api/films/7/]", people.getFilms().toString());//обязательно в конце прописать етод toString() так как он ждет срингу на выходе
-        Assert.assertEquals("[https://swapi.co/api/species/1/\"\n" +
-                "    ]", people.getSpecies().toString());
+        Assert.assertEquals("[https://swapi.co/api/films/2/, https://swapi.co/api/films/6/, https://swapi.co/api/films/3/, https://swapi.co/api/films/1/, https://swapi.co/api/films/7/]", people.getFilms().toString());//обязательно в конце прописать метод toString() так как он ждет срингу на выходе, а не массив сторк
+        Assert.assertEquals("[https://swapi.co/api/species/12/]", people.getSpecies().toString());
     }
 
 
