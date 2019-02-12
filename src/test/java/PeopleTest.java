@@ -13,22 +13,24 @@ public class PeopleTest extends Base {
 
     String getSwapiUrl = "https://swapi.co";
     String getSwapiPath = "/api/people/1/";
-    PeopleModel test = new PeopleModel();
+    //PeopleModel test = new PeopleModel(); // for post
 
 
-    @Test
+/*    @Test
     public void positiveTest() {
+        //old logic method Get
         Response response = given()
                 .baseUri(getSwapiUrl)
                 .basePath(getSwapiPath)
                 .accept(ContentType.JSON)
                 .when().get()
-                .then().extract().response();
+                .then().extract().response(); // old logic
 
-    }
+    }*/
 
     @Test
     public void getPeopleLuk() {
+        //new logic method Get
         PeopleModel people = new PeopleCtrl().getNewPeople();
         Assert.assertEquals("Luke Skywalker", people.getName());
         Assert.assertEquals("[https://swapi.co/api/films/2/, https://swapi.co/api/films/6/, https://swapi.co/api/films/3/, https://swapi.co/api/films/1/, https://swapi.co/api/films/7/]", people.getFilms().toString());//обязательно в конце прописать метод toString() так как он ждет срингу на выходе, а не массив сторк

@@ -1,13 +1,14 @@
 package people;
 
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
 public class PeopleModel {
+
+    String getSwapiUrl = "https://swapi.co";
+    String getSwapiPath = "/api/people/1/";
 
     @JsonProperty("films")
     private List<String> films;
