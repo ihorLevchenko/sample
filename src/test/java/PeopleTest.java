@@ -1,18 +1,13 @@
 import ctrl.PeopleCtrl;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import people.PeopleModel;
 
-import static io.restassured.RestAssured.get;
-import static io.restassured.RestAssured.given;
-
 
 public class PeopleTest extends Base {
 
-    String getSwapiUrl = "https://swapi.co";
-    String getSwapiPath = "/api/people/1/";
+    /*String getSwapiUrl = "https://swapi.co";
+    String getSwapiPath = "/api/people/1/";*/
     //PeopleModel test = new PeopleModel(); // for post
 
 
@@ -32,9 +27,11 @@ public class PeopleTest extends Base {
     public void getPeopleLuk() {
         //new logic method Get
         PeopleModel people = new PeopleCtrl().getNewPeople();
+
         Assert.assertEquals("Luke Skywalker", people.getName());
         Assert.assertEquals("[https://swapi.co/api/films/2/, https://swapi.co/api/films/6/, https://swapi.co/api/films/3/, https://swapi.co/api/films/1/, https://swapi.co/api/films/7/]", people.getFilms().toString());//обязательно в конце прописать метод toString() так как он ждет срингу на выходе, а не массив сторк
-        Assert.assertEquals("[https://swapi.co/api/species/12/]", people.getSpecies().toString());
+        Assert.assertEquals("[https://swapi.co/api/species/1/]", people.getSpecies().toString());
+
     }
 
 

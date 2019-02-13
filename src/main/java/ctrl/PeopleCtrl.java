@@ -1,13 +1,14 @@
 package ctrl;
 
 import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.LogDetail;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
-import people.PeopleModel;
-
 
 import static io.restassured.RestAssured.given;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.LogDetail;
+import people.PeopleModel;
+
 
 public class PeopleCtrl {
 
@@ -18,6 +19,10 @@ public class PeopleCtrl {
                 .setBaseUri("https://swapi.co")
                 .setBasePath("/api/people/1/")
                 .setContentType(ContentType.JSON)
+                .log(LogDetail.ALL).build();
+        RestAssured.responseSpecification = new ResponseSpecBuilder()
+                .expectStatusCode(200)
+                .expectContentType(ContentType.JSON)
                 .log(LogDetail.ALL).build();
     }
 
