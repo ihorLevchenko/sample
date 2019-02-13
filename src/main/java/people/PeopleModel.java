@@ -56,6 +56,28 @@ public class PeopleModel {
     @JsonProperty("height")
     private String height;
 
+    public PeopleModel() {
+    }
+
+    public PeopleModel(List<String> films, String homeworld, String gender, String skinColor, String edited, String created, String mass, List<String> vehicles, String url, String hairColor, String birthYear, String eyeColor, List<String> species, List<String> starships, String name, String height) {
+        this.films = films;
+        this.homeworld = homeworld;
+        this.gender = gender;
+        this.skinColor = skinColor;
+        this.edited = edited;
+        this.created = created;
+        this.mass = mass;
+        this.vehicles = vehicles;
+        this.url = url;
+        this.hairColor = hairColor;
+        this.birthYear = birthYear;
+        this.eyeColor = eyeColor;
+        this.species = species;
+        this.starships = starships;
+        this.name = name;
+        this.height = height;
+    }
+
     public void setFilms(List<String> films) {
         this.films = films;
     }
